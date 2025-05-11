@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useToast } from "@/hooks/use-toast";
@@ -27,13 +27,59 @@ const ContactSection = () => {
   });
 
   const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log(data);
-    toast({
-      title: "Message Sent! 🚀",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    reset();
+    // IMPORTANT: Replace with your actual Google Form ID
+    // This is the ID found in your Google Form's URL.
+    // For example, if your form URL is https://docs.google.com/forms/d/e/1FAIpQLSc_xxxxxxxxxxxxxxxxx_yyyyyyyyxxxxxx/viewform
+    // The ID is 1FAIpQLSc_xxxxxxxxxxxxxxxxx_yyyyyyyyxxxxxx
+    const googleFormId = "YOUR_GOOGLE_FORM_ID_PLACEHOLDER"; // User needs to replace this
+
+    // IMPORTANT: Replace with your actual entry IDs from your Google Form
+    // To find these:
+    // 1. Open your Google Form.
+    // 2. Click the three dots (More options) menu in the top right.
+    // 3. Select "Get pre-filled link".
+    // 4. Fill in sample data for each field (e.g., "Test Name" for Name field).
+    // 5. Click "Get link" at the bottom.
+    // 6. Click "Copy link".
+    // 7. Paste the link into a text editor. It will look something like:
+    //    https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID_PLACEHOLDER/viewform?usp=pp_url&entry.123456789=Test+Name&entry.987654321=test@example.com&entry.112233445=Test+Message
+    //    The `entry.XXXXXXX` parts are your field entry IDs.
+    const nameEntryId = "entry.YOUR_NAME_FIELD_ID_PLACEHOLDER"; // Replace with actual ID for Name
+    const emailEntryId = "entry.YOUR_EMAIL_FIELD_ID_PLACEHOLDER"; // Replace with actual ID for Email
+    const messageEntryId = "entry.YOUR_MESSAGE_FIELD_ID_PLACEHOLDER"; // Replace with actual ID for Message
+
+    const submitUrl = `https://docs.google.com/forms/d/e/${googleFormId}/formResponse`;
+
+    const formData = new URLSearchParams();
+    formData.append(nameEntryId, data.name);
+    formData.append(emailEntryId, data.email);
+    formData.append(messageEntryId, data.message);
+
+    try {
+      await fetch(submitUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Google Forms don't typically return CORS headers. 'no-cors' allows submission.
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData.toString(),
+      });
+
+      // With mode: 'no-cors', we can't check response.ok or status.
+      // We assume success if fetch doesn't throw an error (e.g. network error).
+      toast({
+        title: "Message Sent! 🚀",
+        description: "Thanks for reaching out. Your message has been submitted.",
+      });
+      reset(); // Reset form fields
+    } catch (error) {
+      console.error("Error submitting to Google Form:", error);
+      toast({
+        title: "Submission Error 😔",
+        description: "Could not send your message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
