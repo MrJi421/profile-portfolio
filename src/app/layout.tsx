@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
+    <html lang="en" className={`dark ${inter.variable} ${robotoMono.variable}`}>
       <body className="antialiased flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">

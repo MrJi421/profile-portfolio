@@ -1,5 +1,5 @@
-import type { Project } from '@/types';
-import { Cpu, Code2, Smartphone, Album, Briefcase, Lightbulb } from 'lucide-react';
+import type { Project, Skill, ExperienceItem, EducationItem } from '@/types';
+import { Cpu, Code2, Smartphone, Album, Briefcase, Lightbulb, LayoutPanelLeft, ToyBrick, Type, Wind, GitFork, Container, Flame, FigmaIcon, BrainCircuit, Languages, Server, Palette, BriefcaseBusiness } from 'lucide-react';
 
 export const mockProjects: Project[] = [
   {
@@ -80,3 +80,79 @@ export const mockProjects: Project[] = [
 ];
 
 export const mockUserHistory = "User has shown interest in AI-related projects and projects involving modern web technologies like React and Next.js. Previously viewed 'AI Powered Art Generator' and 'Mobile Fitness Tracker'.";
+
+export const mockSkills: Skill[] = [
+  { id: 'skill1', name: 'React.js', icon: LayoutPanelLeft, level: 'Advanced' },
+  { id: 'skill2', name: 'Next.js', icon: LayoutPanelLeft, level: 'Advanced' },
+  { id: 'skill3', name: 'Node.js', icon: ToyBrick, level: 'Intermediate' },
+  { id: 'skill4', name: 'TypeScript', icon: Type, level: 'Advanced' },
+  { id: 'skill5', name: 'Python', icon: Code2, level: 'Intermediate' },
+  { id: 'skill6', name: 'Tailwind CSS', icon: Wind, level: 'Advanced' },
+  { id: 'skill7', name: 'Git & GitHub', icon: GitFork, level: 'Advanced' },
+  { id: 'skill8', name: 'Docker', icon: Container, level: 'Intermediate' },
+  { id: 'skill9', name: 'Firebase', icon: Flame, level: 'Intermediate' },
+  { id: 'skill10', name: 'Figma', icon: FigmaIcon, level: 'Proficient' },
+  { id: 'skill11', name: 'GenAI / LLMs', icon: BrainCircuit, level: 'Intermediate' },
+  { id: 'skill12', name: 'JavaScript (ES6+)', icon: Languages, level: 'Advanced' },
+  { id: 'skill13', name: 'REST APIs', icon: Server, level: 'Advanced' },
+  { id: 'skill14', name: 'UI/UX Design', icon: Palette, level: 'Proficient' },
+];
+
+export const mockExperience: ExperienceItem[] = [
+  {
+    id: 'exp1',
+    role: 'Senior Frontend Developer',
+    company: 'Tech Solutions Inc.',
+    companyUrl: '#',
+    duration: 'Jan 2021 - Present',
+    descriptionPoints: [
+      'Led the development of a new client-facing dashboard using React, Next.js, and TypeScript, improving user engagement by 25%.',
+      'Collaborated with backend teams to design and implement RESTful APIs.',
+      'Mentored junior developers and conducted code reviews to maintain high code quality.',
+      'Integrated AI-powered features for data analysis and visualization.'
+    ],
+    logoUrl: 'https://picsum.photos/seed/techinc/100/100',
+    dataAiHint: 'company logo',
+    tags: ['React', 'Next.js', 'TypeScript', 'AI', 'Leadership']
+  },
+  {
+    id: 'exp2',
+    role: 'Full Stack Developer',
+    company: 'Innovatech Ltd.',
+    companyUrl: '#',
+    duration: 'Jun 2018 - Dec 2020',
+    descriptionPoints: [
+      'Developed and maintained web applications using Node.js, Express, and React.',
+      'Worked on database design and management with PostgreSQL and MongoDB.',
+      'Implemented CI/CD pipelines using Jenkins and Docker, reducing deployment times by 40%.',
+      'Contributed to agile development processes, including sprint planning and retrospectives.'
+    ],
+    logoUrl: 'https://picsum.photos/seed/innovatech/100/100',
+    dataAiHint: 'company logo abstract',
+    tags: ['Node.js', 'React', 'PostgreSQL', 'Docker', 'Agile']
+  }
+];
+
+export const mockEducation: EducationItem[] = [
+  {
+    id: 'edu1',
+    institution: 'University of Advanced Technology',
+    institutionUrl: '#',
+    degree: 'Master of Science in Computer Science',
+    fieldOfStudy: 'Specialization in Artificial Intelligence',
+    duration: '2016 - 2018',
+    description: 'Thesis on "Natural Language Processing for Sentiment Analysis". Graduated with honors.',
+    logoUrl: 'https://picsum.photos/seed/unitech/100/100',
+    dataAiHint: 'university building'
+  },
+  {
+    id: 'edu2',
+    institution: 'State College of Engineering',
+    institutionUrl: '#',
+    degree: 'Bachelor of Engineering in Software Engineering',
+    duration: '2012 - 2016',
+    description: 'Capstone project on "E-commerce Platform Development". Active member of the coding club.',
+    logoUrl: 'https://picsum.photos/seed/stateeng/100/100',
+    dataAiHint: 'college campus'
+  }
+];
