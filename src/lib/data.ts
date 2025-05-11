@@ -1,6 +1,6 @@
 import type { Project, Skill, ExperienceItem, EducationItem, Certification, Achievement, LeadershipRole, Publication } from '@/types';
 import {
-  Cpu, Code2, Smartphone, Album, Briefcase, Lightbulb, LayoutPanelLeft, ToyBrick, Type, Wind, GitFork, Container, Flame, FigmaIcon, BrainCircuit, Languages, Server, Palette, Github, Database, DatabaseZap, Sigma, BarChart3, PieChart, Workflow, AreaChart, FileSpreadsheet, Binary, Coffee, FileCode2, CodeXml, Cloud, CloudCog, Calculator, Files, ShieldCheck, MailWarning, Users, Award, Trophy, Star, UserCheck, BriefcaseBusiness, GraduationCap, Link as LinkIcon, CalendarDays, Target, TableProperties, BarChartHorizontalBig, ServerCog, FileText
+  Cpu, Code2, Smartphone, Album, Briefcase, Lightbulb, LayoutPanelLeft, ToyBrick, Type, Wind, GitFork, Container, Flame, FigmaIcon, BrainCircuit, Languages, Server, Palette, Github, Database, DatabaseZap, Sigma, BarChart3, PieChart, Workflow, AreaChart, FileSpreadsheet, Binary, Coffee, FileCode2, CodeXml, Cloud, CloudCog, Calculator, Files, ShieldCheck, MailWarning, Users, Award, Trophy, Star, UserCheck, BriefcaseBusiness, GraduationCap, Link as LinkIcon, CalendarDays, Target, Table, BarChartHorizontalBig, ServerCog, FileText
 } from 'lucide-react';
 
 // Updated User History for AI Curation
@@ -55,7 +55,7 @@ export const mockProjects: Project[] = [
 export const mockSkills: Skill[] = [
   // Machine Learning & Data Analysis
   { id: 'skill_sklearn', name: 'Scikit-learn', icon: BrainCircuit, category: 'Machine Learning & Data Analysis', level: 'Proficient' },
-  { id: 'skill_pandas', name: 'Pandas', icon: TableProperties, category: 'Machine Learning & Data Analysis', level: 'Proficient' },
+  { id: 'skill_pandas', name: 'Pandas', icon: Table, category: 'Machine Learning & Data Analysis', level: 'Proficient' },
   { id: 'skill_numpy', name: 'NumPy', icon: Sigma, category: 'Machine Learning & Data Analysis', level: 'Proficient' },
   { id: 'skill_matplotlib', name: 'Matplotlib', icon: BarChart3, category: 'Machine Learning & Data Analysis', level: 'Proficient' },
   { id: 'skill_sql', name: 'SQL', icon: Database, category: 'Machine Learning & Data Analysis', level: 'Proficient' },
@@ -217,12 +217,20 @@ export const mockLeadership: LeadershipRole[] = [
     icon: UserCheck
   },
   {
+    id: 'lead4',
+    role: 'Event Head, Xploit Cybersecurity Event (Synchrotech \'24)',
+    organization: 'KJC, Bengaluru, IN',
+    duration: 'Sep-2024',
+    description: 'Led a cybersecurity CTF-style event focused on web exploitation, cryptography, and binary analysis. Boosted peer interest in ethical hacking and VAPT practices. participant engagement.', // participant engagement was part of description.
+    icon: Target
+  },
+  {
     id: 'lead3',
     role: 'Class Representative',
     organization: 'Kristu Jayanti College',
     duration: '2023-2024',
     description: 'Led class activities, bridging communication between students and faculty, organizing events, and fostering a positive class environment.',
-    icon: BriefcaseBusiness // Or Users
+    icon: BriefcaseBusiness
   }
 ];
 
@@ -257,6 +265,6 @@ export const personalDetails = {
   phone: "+91 7651901638",
   email: "hemantk.research@gmail.com",
   linkedin: "https://www.linkedin.com/in/hemantkumar421",
-  githubUsername: "hemantkumar421", // Assuming, replace if different
+  githubUsername: "hemantkumar421",
   summary: "Data Analytics professional with hands-on experience in Python, Machine Learning, and Data Analysis. Specialized in developing ML models, conducting data analysis, and creating insightful reports. Proven track record in delivering high-quality outputs in tech and research roles, with a focus on problem-solving and effective communication. Seeking a position as an Analyst, to contribute technical expertise in data analytics, problem-solving, and market research."
 };
