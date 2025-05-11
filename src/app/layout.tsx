@@ -3,7 +3,8 @@ import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
+import { personalDetails } from '@/lib/data';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -16,8 +17,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'AdventureFolio | Showcase Your Journey',
-  description: 'A portfolio to showcase creative projects and adventures, powered by Next.js and AI.',
+  title: `${personalDetails.name} | ${personalDetails.title}`,
+  description: `Personal portfolio of ${personalDetails.name}, a ${personalDetails.title}. Showcasing projects in Data Analytics, Machine Learning, and Python.`,
 };
 
 export default function RootLayout({
@@ -27,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${inter.variable} ${robotoMono.variable}`}>
-      <body className="antialiased flex flex-col min-h-screen">
+      <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
         <Header />
         <main className="flex-grow">
           {children}

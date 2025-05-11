@@ -1,9 +1,10 @@
+// src/components/sections/projects-section.tsx
 'use client';
 
-import { useState, useEffect, useTransition } from 'react';
+import { useState, useTransition } from 'react';
 import SectionWrapper from '@/components/layout/section-wrapper';
 import ProjectGrid from '@/components/projects/project-grid';
-import { mockProjects, mockUserHistory } from '@/lib/data';
+import { mockProjects, mockUserHistory, personalDetails } from '@/lib/data';
 import type { Project } from '@/types';
 import { Button } from '@/components/ui/button';
 import { curateProjects } from '@/ai/flows/curate-projects';
@@ -19,7 +20,7 @@ const ProjectsSection = () => {
   // Format projects for AI
   const formatProjectsForAI = (projects: Project[]): string => {
     return projects
-      .map(p => `Project ID: ${p.id}, Title: ${p.title}, Description: ${p.description}, Tags: ${p.tags.join(', ')}, Category: ${p.category}`)
+      .map(p => `Project ID: ${p.id}, Title: ${p.title}, Description: ${p.description}, Tags: ${p.tags.join(', ')}, Category: ${p.category || 'N/A'}, Date: ${p.date || 'N/A'}`)
       .join('; ');
   };
 
@@ -28,33 +29,31 @@ const ProjectsSection = () => {
       try {
         toast({
           title: "Curating Projects ✨",
-          description: "Our AI is finding the best projects for you...",
+          description: `Finding the best projects for ${personalDetails.name}...`,
         });
         const availableProjectsString = formatProjectsForAI(mockProjects);
         const result = await curateProjects({
-          userHistory: mockUserHistory,
+          userHistory: mockUserHistory, // mockUserHistory now refers to Hemant
           availableProjects: availableProjectsString,
         });
         
-        // Assuming result.curatedProjects is a string like "proj1,proj3,proj2"
         const curatedIds = result.curatedProjects.split(',').map(id => id.trim());
         const newDisplayedProjects = mockProjects.filter(p => curatedIds.includes(p.id));
         
-        // Maintain order from AI if possible, or sort by original order for found IDs
         const orderedProjects = curatedIds
           .map(id => newDisplayedProjects.find(p => p.id === id))
           .filter((p): p is Project => Boolean(p));
 
-        setDisplayedProjects(orderedProjects.length > 0 ? orderedProjects : mockProjects); // Fallback if curation is empty
+        setDisplayedProjects(orderedProjects.length > 0 ? orderedProjects : mockProjects);
         setIsCurated(true);
         toast({
           title: "Projects Curated! 🪄",
-          description: "We've tailored the project list to your interests.",
+          description: "Tailored the project list based on relevance.",
           variant: "default", 
         });
       } catch (error) {
         console.error('Error curating projects:', error);
-        setDisplayedProjects(mockProjects); // Fallback to all projects on error
+        setDisplayedProjects(mockProjects);
         toast({
           title: "Curation Failed 😔",
           description: "Something went wrong. Showing all projects instead.",
@@ -77,10 +76,10 @@ const ProjectsSection = () => {
     <SectionWrapper id="projects" className="bg-background">
       <div className="space-y-8">
         <div className="text-center space-y-4">
-          <h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">My Adventures</h2>
+          <h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">My Projects</h2>
           <p className="max-w-2xl mx-auto text-lg text-foreground/80">
             A collection of projects showcasing diverse skills and creative solutions. 
-            Use the AI curator to discover projects aligned with your interests!
+            Use the AI curator to discover projects aligned with my profile!
           </p>
         </div>
         

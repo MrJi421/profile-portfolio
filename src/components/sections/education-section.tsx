@@ -1,6 +1,6 @@
 import SectionWrapper from '@/components/layout/section-wrapper';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { mockEducation } from '@/lib/data';
+import { mockEducation, personalDetails } from '@/lib/data';
 import type { EducationItem } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';

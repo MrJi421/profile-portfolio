@@ -1,6 +1,6 @@
 import SectionWrapper from '@/components/layout/section-wrapper';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { mockExperience } from '@/lib/data';
+import { mockExperience, personalDetails } from '@/lib/data';
 import type { ExperienceItem } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -66,28 +66,10 @@ const ExperienceSection = () => {
           My professional journey and contributions in various roles.
         </p>
       </div>
-      <div className="relative space-y-10">
-        {/* Optional: Add a timeline line if desired later: 
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-border -ml-0.5 hidden md:block" aria-hidden="true"></div>
-        */}
-        {mockExperience.map((item, index) => (
-          <div key={item.id} className="flex md:items-center w-full">
-            {/* Optional: Timeline Dot
-              <div className="hidden md:flex w-1/2 justify-end">
-                {index % 2 === 0 && <div className="w-1/2"></div>}
-              </div>
-              <div className="hidden md:block relative">
-                <div className="h-4 w-4 rounded-full bg-primary border-2 border-card absolute top-1/2 -translate-y-1/2 -translate-x-[calc(50%-1px)]"></div>
-              </div>
-            */}
-            <div className="w-full">
-              <ExperienceCard item={item} />
-            </div>
-             {/* Optional: For alternating sides timeline
-              <div className="hidden md:flex w-1/2">
-                {index % 2 !== 0 && <div className="w-1/2"></div>}
-              </div>
-            */}
+      <div className="relative space-y-10 max-w-3xl mx-auto">
+        {mockExperience.map((item) => (
+          <div key={item.id} className="flex w-full">
+            <ExperienceCard item={item} />
           </div>
         ))}
       </div>

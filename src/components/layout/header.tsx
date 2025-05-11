@@ -7,9 +7,12 @@ import { Menu } from 'lucide-react';
 const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Education', href: '#education' },
+  { label: 'Certifications', href: '#certifications' },
+  { label: 'Achievements', href: '#achievements' },
+  { label: 'Leadership', href: '#leadership' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -18,7 +21,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
         <Logo />
-        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center space-x-2 lg:space-x-4 text-sm font-medium">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -37,7 +40,7 @@ const Header = () => {
                 <span className="sr-only">Toggle Navigation</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+            <SheetContent side="right" className="w-[280px] sm:w-[320px] bg-background">
               <div className="flex flex-col space-y-6 p-6">
                 <Logo />
                 <nav className="flex flex-col space-y-3">
