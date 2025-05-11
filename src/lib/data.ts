@@ -1,6 +1,6 @@
-import type { Project, Skill, ExperienceItem, EducationItem, Certification, Achievement, LeadershipRole } from '@/types';
+import type { Project, Skill, ExperienceItem, EducationItem, Certification, Achievement, LeadershipRole, Publication } from '@/types';
 import {
-  Cpu, Code2, Smartphone, Album, Briefcase, Lightbulb, LayoutPanelLeft, ToyBrick, Type, Wind, GitFork, Container, Flame, FigmaIcon, BrainCircuit, Languages, Server, Palette, Github, Database, DatabaseZap, Sigma, BarChart3, PieChart, Workflow, AreaChart, FileSpreadsheet, Binary, Coffee, FileCode2, CodeXml, Cloud, CloudCog, Calculator, Files, ShieldCheck, MailWarning, Users, Award, Trophy, Star, UserCheck, BriefcaseBusiness, GraduationCap, Link as LinkIcon, CalendarDays, Target, TableProperties, BarChartHorizontalBig, ServerCog
+  Cpu, Code2, Smartphone, Album, Briefcase, Lightbulb, LayoutPanelLeft, ToyBrick, Type, Wind, GitFork, Container, Flame, FigmaIcon, BrainCircuit, Languages, Server, Palette, Github, Database, DatabaseZap, Sigma, BarChart3, PieChart, Workflow, AreaChart, FileSpreadsheet, Binary, Coffee, FileCode2, CodeXml, Cloud, CloudCog, Calculator, Files, ShieldCheck, MailWarning, Users, Award, Trophy, Star, UserCheck, BriefcaseBusiness, GraduationCap, Link as LinkIcon, CalendarDays, Target, TableProperties, BarChartHorizontalBig, ServerCog, FileText
 } from 'lucide-react';
 
 // Updated User History for AI Curation
@@ -226,6 +226,30 @@ export const mockLeadership: LeadershipRole[] = [
   }
 ];
 
+// Publications & Presentations Data
+export const mockPublications: Publication[] = [
+  {
+    id: 'pub1',
+    type: 'Journal Publication',
+    title: 'Use Cases of Generative and Predictive AI for Enhancing Security in IoT and Cloud Systems',
+    authors: 'Dr. Kalaiselvi K, Dr. Mary Jacob, Hemant Kumar, Hannah Jess John, George Shaiju',
+    venue: 'Scopus Springer Q2 Journal',
+    date: 'Feb-2025',
+    description: 'The AI-Driven Security Architecture and Zero Trust Security Model provide a multi-layered approach to securing IoT and cloud systems. The architecture utilizes predictive threat analysis, synthetic data generation, and adaptive defence mechanisms, while the Zero Trust model enforces continuous verification, AI-powered access controls, and micro-segmentation. Together, they create an adaptive, resilient security framework that improves threat detection and response, ensuring robust protection against emerging risks.',
+    icon: FileText,
+  },
+  {
+    id: 'pub2',
+    type: 'Conference Presentation',
+    title: 'Cryptographic Algorithm Optimization: An Empirical Study on Enhancing Security and Efficiency',
+    authors: 'Dr. Kalaiselvi K, Hemant Kumar, Hannah Jess John',
+    venue: '7th International Conference on Computational Intelligence 2024 (Paper Presentation)',
+    date: 'Feb-2024',
+    description: 'This paper presents an empirical study on optimizing cryptographic algorithms to improve both security and efficiency. The study addresses the challenges faced by existing cryptographic systems and suggests enhancements that balance performance and security.',
+    icon: FileText,
+  },
+];
+
 export const personalDetails = {
   name: "Hemant Kumar",
   title: "Data Analytics Professional",
@@ -236,5 +260,3 @@ export const personalDetails = {
   githubUsername: "hemantkumar421", // Assuming, replace if different
   summary: "Data Analytics professional with hands-on experience in Python, Machine Learning, and Data Analysis. Specialized in developing ML models, conducting data analysis, and creating insightful reports. Proven track record in delivering high-quality outputs in tech and research roles, with a focus on problem-solving and effective communication. Seeking a position as an Analyst, to contribute technical expertise in data analytics, problem-solving, and market research."
 };
-
-    

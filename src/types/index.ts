@@ -71,3 +71,15 @@ export interface LeadershipRole {
   description: string;
   icon?: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 }
+
+export interface Publication {
+  id: string;
+  type: 'Journal Publication' | 'Conference Presentation';
+  title: string;
+  authors: string;
+  venue: string;
+  date: string;
+  description: string;
+  icon?: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  url?: string; // Optional link to publication
+}

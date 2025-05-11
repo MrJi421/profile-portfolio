@@ -7,6 +7,7 @@ import EducationSection from '@/components/sections/education-section';
 import CertificationsSection from '@/components/sections/certifications-section';
 import AchievementsSection from '@/components/sections/achievements-section';
 import LeadershipSection from '@/components/sections/leadership-section';
+import PublicationsSection from '@/components/sections/publications-section';
 import ContactSection from '@/components/sections/contact-section';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <ProjectsSection />
       <EducationSection />
       <CertificationsSection />
+      <PublicationsSection />
       <AchievementsSection />
       <LeadershipSection />
       <ContactSection />
