@@ -11,8 +11,8 @@ const HeroSection = () => {
     <SectionWrapper 
       id="hero" 
       className="bg-cover bg-center parallax-bg relative" 
-      style={{ backgroundImage: "url('https://picsum.photos/seed/hemantfoliohero/1920/1080')" }}
-      data-ai-hint="modern workspace"
+      style={{ backgroundImage: "url('https://picsum.photos/seed/techhero/1920/1080')" }}
+      data-ai-hint="abstract tech data"
       isFullScreen
       hasPadding={false}
     >
@@ -45,3 +45,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

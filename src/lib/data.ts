@@ -1,6 +1,6 @@
 import type { Project, Skill, ExperienceItem, EducationItem, Certification, Achievement, LeadershipRole, Publication } from '@/types';
 import {
-  Cpu, Code2, Smartphone, Album, Briefcase, Lightbulb, LayoutPanelLeft, ToyBrick, Type, Wind, GitFork, Container, Flame, FigmaIcon, BrainCircuit, Languages, Server, Palette, Github, Database, DatabaseZap, Sigma, BarChart3, PieChart, Workflow, AreaChart, FileSpreadsheet, Binary, Coffee, FileCode2, CodeXml, Cloud, CloudCog, Calculator, Files, ShieldCheck, MailWarning, Users, Award, Trophy, Star, UserCheck, BriefcaseBusiness, GraduationCap, Link as LinkIcon, CalendarDays, Target, Table, BarChartHorizontalBig, ServerCog, FileText
+  Cpu, Code2, Smartphone, Album, Briefcase, Lightbulb, LayoutPanelLeft, ToyBrick, Type, Wind, GitFork, Container, Flame, FigmaIcon, BrainCircuit, Languages, Server, Palette, Github, Database, DatabaseZap, Sigma, BarChart3, PieChart, Workflow, AreaChart, FileSpreadsheet, Binary, Coffee, FileCode2, CodeXml, Cloud, CloudCog, Calculator, Files, ShieldCheck, MailWarning, Users, Award, Trophy, Star, UserCheck, BriefcaseBusiness, GraduationCap, Link as LinkIcon, CalendarDays, Target, Table, BarChartHorizontalBig, ServerCog, FileText, Network, ScanSearch, BotMessageSquare
 } from 'lucide-react';
 
 // Updated User History for AI Curation
@@ -13,11 +13,11 @@ export const mockProjects: Project[] = [
     title: 'Browser Extension – Malicious Link & File Detector',
     description: 'Developed a browser extension to detect and block malicious URLs and downloads in real-time using threat intelligence APIs and Gemini API for advanced risk analysis.',
     longDescription: 'This browser extension aims to enhance online security by proactively identifying and neutralizing threats from malicious links and file downloads. It integrates multiple threat intelligence APIs like URLScan.io and Google Safe Browsing, coupled with the Gemini API for sophisticated real-time risk assessment. The system employs data analysis, NLP, and machine learning techniques to understand the behavior of URL servers and predict potential threats.',
-    thumbnailUrl: 'https://picsum.photos/seed/malwareguard/600/400',
+    thumbnailUrl: 'https://picsum.photos/seed/cybersecuritytech/600/400',
     dataAiHint: 'cyber security',
     tags: ['Browser Extension', 'Security', 'Python', 'JavaScript', 'Gemini API', 'NLP', 'Machine Learning', 'Data Analysis', 'URLScan.io', 'Google Safe Browsing'],
     category: 'AI & Security',
-    icon: ShieldCheck,
+    icon: ScanSearch, // Changed from ShieldCheck
     date: 'Expected March 2025',
     // liveUrl: '#', // Add if available
     // sourceUrl: '#', // Add if available
@@ -27,11 +27,11 @@ export const mockProjects: Project[] = [
     title: 'Spam Email Detector using Machine Learning',
     description: 'Developed an ML model to classify emails as spam or not, utilizing Python libraries like Scikit-learn and Pandas for high accuracy in email filtering.',
     longDescription: 'This project focuses on building an efficient spam email detection system using machine learning. By leveraging Python libraries such as Scikit-learn for model training and Pandas for data preprocessing, the model accurately classifies emails. Key tasks involved feature extraction from email content, training various classification models, and evaluating their performance to achieve high precision in identifying spam, thereby improving user experience and email security.',
-    thumbnailUrl: 'https://picsum.photos/seed/spamfilter/600/400',
-    dataAiHint: 'email inbox',
+    thumbnailUrl: 'https://picsum.photos/seed/aimodel/600/400',
+    dataAiHint: 'AI algorithm',
     tags: ['Machine Learning', 'Python', 'Scikit-learn', 'Pandas', 'NLP', 'Data Analysis', 'Email Filtering'],
     category: 'Machine Learning',
-    icon: MailWarning,
+    icon: BotMessageSquare, // Changed from MailWarning
     date: 'Jan 2024',
     // liveUrl: '#', // Add if available
     // sourceUrl: '#', // Add if available
@@ -40,11 +40,11 @@ export const mockProjects: Project[] = [
     id: 'proj_portfolio',
     title: 'Personal Portfolio Website (AdventureFolio)',
     description: 'The very portfolio you are browsing now, built with Next.js, Tailwind CSS, TypeScript, and Genkit for AI-powered features.',
-    thumbnailUrl: 'https://picsum.photos/seed/devportfolio/600/400',
-    dataAiHint: 'modern website',
+    thumbnailUrl: 'https://picsum.photos/seed/webarchitecture/600/400',
+    dataAiHint: 'web architecture',
     tags: ['Next.js', 'TailwindCSS', 'TypeScript', 'Genkit', 'Vercel'],
     category: 'Web Development',
-    icon: Briefcase,
+    icon: Code2, // Changed from Briefcase
     date: 'Ongoing',
     liveUrl: '#', // This site's URL
     // sourceUrl: '#', // Add if available
@@ -99,8 +99,8 @@ export const mockExperience: ExperienceItem[] = [
       'Played a key role in the development, optimization, and fine-tuning of machine learning models to enhance algorithm performance, leading to improved results across various projects.',
       'Collaborated closely with cross-functional teams, contributing insights to refine model accuracy and operational efficiency, which directly impacted the overall project success.',
     ],
-    logoUrl: 'https://picsum.photos/seed/codingraja/100/100',
-    dataAiHint: 'tech company logo',
+    logoUrl: 'https://picsum.photos/seed/airesearchlab/100/100',
+    dataAiHint: 'AI research lab',
     tags: ['Machine Learning', 'Model Optimization', 'Algorithm Performance', 'Team Collaboration']
   },
   {
@@ -114,8 +114,8 @@ export const mockExperience: ExperienceItem[] = [
       'Worked collaboratively with cross-functional teams, playing an integral role in enhancing algorithm scalability and ensuring seamless integration with existing systems.',
       'Automated and streamlined various data analysis processes using Python libraries and frameworks such as Pandas and NumPy, which significantly improved workflow and reduced manual effort.',
     ],
-    logoUrl: 'https://picsum.photos/seed/cazelabs/100/100',
-    dataAiHint: 'software company logo',
+    logoUrl: 'https://picsum.photos/seed/pythoncode/100/100',
+    dataAiHint: 'python code',
     tags: ['Python', 'System Optimization', 'Data Processing', 'Pandas', 'NumPy', 'Automation']
   },
   {
@@ -128,8 +128,8 @@ export const mockExperience: ExperienceItem[] = [
       'Authored in-depth articles on a wide range of complex technical topics, breaking down intricate concepts into easy-to-understand content for readers at all skill levels.',
       'Developed content that enhanced my technical communication skills while contributing valuable resources to the GeeksforGeeks platform, helping others learn and grow in the tech field.',
     ],
-    logoUrl: 'https://picsum.photos/seed/gfg/100/100', // Placeholder, GFG has a distinct logo
-    dataAiHint: 'education platform logo',
+    logoUrl: 'https://picsum.photos/seed/techdocs/100/100', 
+    dataAiHint: 'technical documentation',
     tags: ['Technical Writing', 'Content Creation', 'Communication', 'EdTech']
   }
 ];
@@ -144,15 +144,15 @@ export const mockEducation: EducationItem[] = [
     fieldOfStudy: 'Computer Science & Analytics',
     duration: 'Expected July 2025',
     // description: '', // Add if more details are needed
-    logoUrl: 'https://picsum.photos/seed/kjc/100/100', // Placeholder
-    dataAiHint: 'college logo'
+    logoUrl: 'https://picsum.photos/seed/universitytech/100/100', 
+    dataAiHint: 'university tech'
   }
 ];
 
 // Certifications from Resume
 export const mockCertifications: Certification[] = [
   { id: 'cert1', name: 'Qlik Sense Business Analyst Certification', issuer: 'Qlik', icon: PieChart },
-  { id: 'cert2', name: 'Qlik Sense Data Architect Certification', issuer: 'Qlik', icon: PieChart },
+  { id: 'cert2', name: 'Qlik Sense Data Architect Certification', issuer: 'Qlik', icon: DatabaseZap }, // Changed icon
   { id: 'cert3', name: 'Celonis Rising Star – Technical', issuer: 'Celonis', icon: Workflow },
   { id: 'cert4', name: 'Celonis Rising Star – Automation', issuer: 'Celonis', icon: ToyBrick },
   { id: 'cert5', name: 'DBMS Certification', issuer: 'NPTEL (IIT Kanpur)', icon: Database },
@@ -160,7 +160,7 @@ export const mockCertifications: Certification[] = [
   { id: 'cert7', name: 'Certified Computing Course (CCC)', issuer: 'NIELIT (Govt. of India)', icon: Cpu },
   { id: 'cert8', name: 'Machine Learning and Pandas Certification', issuer: 'Kaggle', icon: BrainCircuit },
   { id: 'cert9', name: 'RPA and Automation', issuer: 'UiPath', icon: Lightbulb },
-  { id: 'cert10', name: 'Java & Python Programming', issuer: 'HackerRank', icon: Code2 },
+  { id: 'cert10', name: 'Java & Python Programming', issuer: 'HackerRank', icon: CodeXml }, // Changed icon
 ];
 
 // Achievements from Resume
@@ -221,7 +221,7 @@ export const mockLeadership: LeadershipRole[] = [
     role: 'Event Head, Xploit Cybersecurity Event (Synchrotech \'24)',
     organization: 'KJC, Bengaluru, IN',
     duration: 'Sep-2024',
-    description: 'Led a cybersecurity CTF-style event focused on web exploitation, cryptography, and binary analysis. Boosted peer interest in ethical hacking and VAPT practices. participant engagement.', // participant engagement was part of description.
+    description: 'Led a cybersecurity CTF-style event focused on web exploitation, cryptography, and binary analysis. Boosted peer interest in ethical hacking and VAPT practices. participant engagement.', 
     icon: Target
   },
   {
@@ -254,7 +254,7 @@ export const mockPublications: Publication[] = [
     venue: '7th International Conference on Computational Intelligence 2024 (Paper Presentation)',
     date: 'Feb-2024',
     description: 'This paper presents an empirical study on optimizing cryptographic algorithms to improve both security and efficiency. The study addresses the challenges faced by existing cryptographic systems and suggests enhancements that balance performance and security.',
-    icon: FileText,
+    icon: Network, // Changed icon
   },
 ];
 

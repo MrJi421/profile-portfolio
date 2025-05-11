@@ -46,9 +46,9 @@ const AboutSection = () => {
         </FadeIn>
         <FadeIn delay={200} className="relative h-80 md:h-[500px] rounded-xl overflow-hidden shadow-2xl group">
           <Image
-            src="https://picsum.photos/seed/hemantprofile/800/600"
+            src="https://picsum.photos/seed/developerworkspace/800/600"
             alt={personalDetails.name || "Profile picture"}
-            data-ai-hint="professional portrait"
+            data-ai-hint="developer workspace"
             layout="fill"
             objectFit="cover"
             className="transform transition-transform duration-500 group-hover:scale-110"
@@ -61,3 +61,4 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+
