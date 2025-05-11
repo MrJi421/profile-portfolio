@@ -29,11 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${inter.variable} ${robotoMono.variable}`}>
-      <body>
+      <body className="mx-auto">
         <ThemeProvider>
+
           <div className="antialiased flex flex-col min-h-screen bg-background text-foreground">
             <Header />
-            <main className="flex-grow">
+
+            <main className="flex-grow items-center">
               {children}
             </main>
             <Footer />
