@@ -10,6 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useToast } from "@/hooks/use-toast";
 import { Send } from 'lucide-react';
+import FadeIn from '@/components/shared/fade-in';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -26,7 +27,6 @@ const ContactSection = () => {
   });
 
   const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     console.log(data);
     toast({
@@ -38,14 +38,14 @@ const ContactSection = () => {
 
   return (
     <SectionWrapper id="contact" className="bg-secondary/30">
-      <div className="max-w-2xl mx-auto text-center space-y-4">
+      <FadeIn className="max-w-2xl mx-auto text-center space-y-4">
         <h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">Get in Touch</h2>
         <p className="text-lg text-foreground/80">
           Have a project in mind, a question, or just want to say hello? Feel free to reach out!
         </p>
-      </div>
+      </FadeIn>
 
-      <div className="mt-12 max-w-xl mx-auto">
+      <FadeIn delay={200} className="mt-12 max-w-xl mx-auto">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 p-8 bg-card rounded-xl shadow-2xl">
           <div>
             <Label htmlFor="name" className="text-lg font-medium text-primary">Full Name</Label>
@@ -87,7 +87,7 @@ const ContactSection = () => {
             {!isSubmitting && <Send className="ml-2 h-5 w-5" />}
           </Button>
         </form>
-      </div>
+      </FadeIn>
     </SectionWrapper>
   );
 };

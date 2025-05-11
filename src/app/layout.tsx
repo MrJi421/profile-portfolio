@@ -5,6 +5,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { personalDetails } from '@/lib/data';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -28,13 +29,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${inter.variable} ${robotoMono.variable}`}>
-      <body className="antialiased flex flex-col min-h-screen bg-background text-foreground">
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-        <Toaster />
+      <body>
+        <ThemeProvider>
+          <div className="antialiased flex flex-col min-h-screen bg-background text-foreground">
+            <Header />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+            <Toaster />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

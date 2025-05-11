@@ -1,15 +1,16 @@
 import SectionWrapper from '@/components/layout/section-wrapper';
 import Image from 'next/image';
-import { Award, Brain, Users, Zap, Mail, Phone, Linkedin as LinkedinIcon, MapPin } from 'lucide-react';
+import { Mail, Phone, Linkedin as LinkedinIcon, MapPin } from 'lucide-react';
 import { personalDetails } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import FadeIn from '@/components/shared/fade-in';
 
 const AboutSection = () => {
   return (
     <SectionWrapper id="about" className="bg-secondary/30">
       <div className="grid gap-12 md:grid-cols-2 items-center">
-        <div className="space-y-6">
+        <FadeIn className="space-y-6">
           <h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">About Me</h2>
           <p className="text-lg text-foreground/80 leading-relaxed">
             {personalDetails.summary}
@@ -42,10 +43,9 @@ const AboutSection = () => {
               <Link href="#contact">Get in Touch</Link>
             </Button>
           </div>
-        </div>
-        <div className="relative h-80 md:h-[500px] rounded-xl overflow-hidden shadow-2xl group">
+        </FadeIn>
+        <FadeIn delay={200} className="relative h-80 md:h-[500px] rounded-xl overflow-hidden shadow-2xl group">
           <Image
-            // It's better to have a personal image here. Using placeholder for now.
             src="https://picsum.photos/seed/hemantprofile/800/600"
             alt={personalDetails.name || "Profile picture"}
             data-ai-hint="professional portrait"
@@ -54,7 +54,7 @@ const AboutSection = () => {
             className="transform transition-transform duration-500 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
-        </div>
+        </FadeIn>
       </div>
     </SectionWrapper>
   );
