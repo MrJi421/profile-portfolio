@@ -142,7 +142,7 @@ export const mockEducation: EducationItem[] = [
     // institutionUrl: '#', // Add if available
     degree: 'Bachelor of Computer Science',
     fieldOfStudy: 'Computer Science & Analytics',
-    duration: 'Expected July 2025',
+    duration: 'July 2025',
     // description: '', // Add if more details are needed
     logoUrl: 'https://picsum.photos/seed/universitytech/100/100', 
     dataAiHint: 'university tech'
