@@ -205,7 +205,7 @@ export const mockLeadership: LeadershipRole[] = [
     id: 'lead1',
     role: 'Organizer, International Conference on Computational Intelligence 2025 (ICCI 2025)',
     organization: 'Kristu Jayanti College',
-    duration: 'Ongoing',
+    // duration: 'Ongoing',
     description: 'Involved in all aspects of conference organization, including logistics, speaker coordination, and attendee engagement, enhancing leadership and team coordination skills.',
     icon: Users
   },
